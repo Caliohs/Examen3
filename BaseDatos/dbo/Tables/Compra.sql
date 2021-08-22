@@ -1,0 +1,18 @@
+﻿CREATE TABLE [dbo].[Compra]
+(
+ IdCompra INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Compra PRIMARY KEY
+CLUSTERED(IdCompra)
+, ClientesId INT NOT NULL
+ CONSTRAINT FK_Compra_Cliente FOREIGN KEY(ClientesId) REFERENCES
+dbo.Clientes(ClientesId)
+, ProductoId INT NOT NULL
+ CONSTRAINT FK_Compra_Producto FOREIGN KEY(ProductoId) REFERENCES
+dbo.Producto(ProductoId)
+, FechaCompra DATETIME NOT NULL
+, Monto DECIMAL(18,2) NOT NULL
+, Impuesto DECIMAL(18,2) NOT NULL
+, Total DECIMAL(18,2) NOT NULL
+, Observaciones VARCHAR(1000) NULL
+, Estado BIT
+)WITH (DATA_COMPRESSION = PAGE)
+GO
