@@ -30,6 +30,7 @@ namespace WebApplication.Pages.Producto
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await service.ProductoGetById(id.Value);

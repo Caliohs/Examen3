@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Alquiler\**" />
+    <Content Remove="Pages\Alquiler\**" />
+    <EmbeddedResource Remove="Pages\Alquiler\**" />
+    <None Remove="Pages\Alquiler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\App\Agencia\Edit.ts" />
     <Content Remove="wwwroot\App\Agencia\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
@@ -20,8 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Alquiler\Edit.cshtml" />
-    <None Include="Pages\Alquiler\Grid.cshtml" />
     <None Include="wwwroot\App\Alquiler\Edit.js" />
     <None Include="wwwroot\App\Alquiler\Edit.js.map" />
     <None Include="wwwroot\App\Alquiler\Grid.js" />

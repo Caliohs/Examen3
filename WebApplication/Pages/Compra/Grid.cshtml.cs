@@ -20,9 +20,10 @@ namespace WebApp.Pages.Compra
         public IEnumerable<CompraEntity> GridList { get; set; } = new List<CompraEntity>();
         public async Task<IActionResult> OnGet()
         {
-
+           
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 GridList = await service.CompraGet();
 
                 return Page();

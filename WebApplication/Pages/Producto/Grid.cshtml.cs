@@ -24,6 +24,7 @@ namespace WebApplication.Pages.Producto
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 GridList = await service.ProductoGet();
 
 

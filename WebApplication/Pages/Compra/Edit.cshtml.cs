@@ -39,6 +39,7 @@ namespace WebApp.Pages.Compra
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
                 if (id.HasValue)
                 {
                     Entity = await service.CompraGetById(id.Value);
